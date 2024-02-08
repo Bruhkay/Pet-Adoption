@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+
 public class animals {
-    private
+    ArrayList animals;
+
+    animals(){
+        
+    }
 }
