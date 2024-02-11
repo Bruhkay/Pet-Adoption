@@ -1,6 +1,6 @@
-public class cat extends animals {
+public class dog extends animals {
     private int ID;
-    String head = "cat";
+    String head = "dog";
     private String name;
     private int age;
     private String color;
@@ -10,7 +10,7 @@ public class cat extends animals {
     private int activity;
     private int monthlyCost;
 
-    cat(String name,int age,String color,String gender,boolean isDisable,int aggression,int activity, int monthlyCost){
+    dog(String name,int age,String color,String gender,boolean isDisable,int aggression,int activity, int monthlyCost){
         this.ID= application.amount;
         this.name = name;
         this.age = age;
@@ -54,3 +54,4 @@ public class cat extends animals {
         return head + name + age+ color + aggression + gender + isDisable+ activity; //TODO
     }
 }
+

@@ -8,6 +8,7 @@ public class application {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        animals animalsList = new animals();
 
         boolean shouldClosed = false;
         int choice = 0;
@@ -17,16 +18,17 @@ public class application {
             if(in.hasNextInt()){    
                 choice = in.nextInt();
                 if( choice == 1){
-                    
+                    System.out.println(animalsList.animals);
                 }
                 else if( choice == 2){
-                    
+                    //TODO
                 }
                 else if( choice == 3){
                     
+                    animalsList.addAnimal();
                 }
                 else if( choice == 4){
-                    
+                    //TODO
                 }
                 else if( choice == 5){
                     shouldClosed = true;
