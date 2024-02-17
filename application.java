@@ -25,6 +25,12 @@ public class application {
         
         Scanner in = new Scanner(System.in);
 
+        //some animals that are already exist in the shelter
+        animals.add(new cat("koko", 4, "dark gray", "female", false, 2, 7,1200));
+        animals.add(new cat("fiona", 2, "dark gray", "female", false, 0, 5, 1300));
+        animals.add(new dog("mars", 3, "red", "female", true, 6, 7, 300));
+        animals.add(new dog("coal", 5, "black", "male", false, 2, 8, 800));
+
         boolean shouldClosed = false;
         int choice = 0;
 
@@ -56,7 +62,7 @@ public class application {
                     addAnimal();
                 }
                 else if( choice == 4){
-                    //TODO
+                    System.out.println( "There are "+ animals.size() + " animals in this website \n"  );//TODO
                 }
                 else if( choice == 5){
                     shouldClosed = true;
