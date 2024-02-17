@@ -1,80 +1,36 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
-public class animals {
-    ArrayList<animals> animals;
-    Scanner in = new Scanner(System.in);
-    int choice = 0;
-    boolean shouldClosed = false;
-
-    private String name;
-    private int age;
-    private String color;
-    private String gender;
-    private boolean isDisable;
-    private int aggression;
-    private int activity;
-    private int monthlyCost;
+public abstract class animals {
     
+    String type;
+    String name;
+    int age;
+    String color;
+    String gender;
+    boolean isDisable;
+    int aggression;
+    int activity;
+    int monthlyCost;
+    int ID;
     animals(){
-        animals = new ArrayList<animals>();
-    }
-    public void addAnimal(){
-        while( !shouldClosed){    
-            animalsList();
-            if(in.hasNextInt()){    
-                
-                choice = in.nextInt();
-                if( choice == 1){
-                    getInformation();
-                    cat animal1 = new cat(name, age, color, gender, isDisable, aggression, activity, monthlyCost);
-                    animals.add(animal1);
-                }
-                else if( choice == 2){
-                    getInformation();
-                    dog animal1 = new dog(name, age, color, gender, isDisable, aggression, activity, monthlyCost);
-                    animals.add(animal1);
-                }
-                else if( choice == 3){
-                    getInformation();
-                    snake animal1 = new snake(name, age, color, gender, isDisable, aggression, activity, monthlyCost);
-                    animals.add(animal1);              
-                }
-                else if( choice == 4){
-                    shouldClosed = true;
-                    System.out.println("\n" + "animal added" + "\n" );
-                }
-                else{
-                    System.out.println("\n invalid char. Please try again ");
-                }
-            }
-        }
-    }
 
-    public void getInformation(){
-        in.nextLine();
-        System.out.println(" enter name: ");
-        name = in.nextLine();
-        System.out.println(" enter age: ");
-         age = in.nextInt();
-        System.out.println(" enter color");
-        in.nextLine();
-         color = in.nextLine();
-        System.out.println(" enter gender");
-         gender = in.nextLine();
-        System.out.println(" is disable true or false; ");
-         isDisable = in.nextBoolean();
-        System.out.println(" agression out of 10?:  ");
-         aggression = in.nextInt();
-        System.out.println(" activity out of 10?:  ");
-         activity = in.nextInt();
-        System.out.println(" monthly cost: ");
-        monthlyCost = in.nextInt();
     }
-    public void animalsList(){
-        System.out.println("1- Cat");
-        System.out.println("2- Dog");
-        System.out.println("3- Snake");
-        System.out.println("4- exit");
+    animals(String type, String name,int age,String color,String gender,boolean isDisable,int aggression,int activity, int monthlyCost){
+        
+        this.type = type;
+        this.ID= application.amount;
+        this.name = name;
+        this.age = age;
+        this.color = color;
+        this.gender = gender;
+        this.isDisable = isDisable;
+        this.aggression = aggression;
+        this.activity = activity;
+        this.monthlyCost = monthlyCost;
+        application.amount++;
+    }
+    
+    @Override
+    public String toString() {
+        return "\n Type: "+  this.type + "\n ID: " + this.ID +"\n Name: "+ this.name + "\n Age: "+ this.age + "\n Color: "+ this.color + "\n Gender: "+ this.gender + "\n Disability state: "+ this.isDisable + "\n Agression level out of 10: "+ this.aggression
+        + "\n Activity level out of 10: "+ this.activity + "\n Monthly cost: "+this.monthlyCost + "$ \n ";
     }
 }
